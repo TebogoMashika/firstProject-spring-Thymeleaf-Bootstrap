@@ -1,0 +1,15 @@
+
+
+Constructor dependency injection call within the controller class
+
+- class which is a controller has an attributes Owner service (interface)
+- the attribute is injected inside the controller meaning that the interface (Owner service) will be called first along with the methods when the class is called
+- from this we can use the methods inside the controller to perform functions
+- the methods call POJO's of
+
+-  view
+    - Controller
+        - dependency injection
+            -  interfaces
+                - methods
+                    - POJOs

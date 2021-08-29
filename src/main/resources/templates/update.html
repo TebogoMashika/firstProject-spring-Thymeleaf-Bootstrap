@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8">
+    <title>CRM - Customer Relationship Manager</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css} "/>
+  </head>
+
+  <body  >
+
+    <h2>CRM - Customer Relationship Manager</h2>
+
+    <div th:each=" customer : ${customerToUpdate}">
+
+      <label th:text="${customer.firstName}"></label><br>
+      <label th:text="${customer.lastName}"></label><br>
+      <label th:text="${customer.email}"></label><br>
+
+    </div>
+
+    <!-- Actions of the forms will be mapped to /update.html and
+        Object is the main POJO class-->
+    <form th:action="@{/saveCustomer}" th:object="${customer}">
+
+      <!---hidden form field to handle update-->
+      <input type="hidden" th:field="*{id}">
+
+      <div class="form-group">
+        <label>First Name: </label>
+        <input type="text" class="col" th:field="*{firstName}">
+      </div>
+
+      <div class="form-group">
+        <label>Last Name: </label>
+        <input type="text" class="col" th:field="*{lastName}">
+      </div>
+
+      <div class="form-group">
+        <label>Email: </label>
+        <input type="text" class="col" th:field="*{email}">
+      </div>
+
+      <button type="submit" class="btn btn-primary"> Submit</button>
+
+    </form>
+
+
+  </body>
+</html>

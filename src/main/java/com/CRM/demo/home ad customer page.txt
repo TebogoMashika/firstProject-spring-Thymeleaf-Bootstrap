@@ -1,0 +1,44 @@
+Creating a new Spring MVC project and a new table in database
+After the initial set up is done, you need to add a new Maven project in the IDE installed and also need to add a new table in the database to store and retrieve data.
+
+Requirements
+Create a maven project using Spring MVC archetype. You can refer to the below reference to set-up your first maven project using spring archetype to pom xml step wise.
+Creating a maven project using in IntelliJ IDEA
+Create separate packages for controller classes, service classes, entity classes and dao classes.
+Packages in Java
+Design Pattern - MVC
+Auto download any spring dependencies if needed (Check the colour codes in the xml files- if the colour is red, you need to import the dependency).
+Import Spring Dependencies
+Create a schema in the database and add a new table. The table should consist the below column names -
+Id (number)
+First name (only string)
+Last name (only string)
+Email (valid email with @ sign)
+Congratulations!!! You have completed creating your first Spring MVC project!
+----------------------------------------------------------------------
+
+
+Creating the JSP pages using HTML and CSS
+JSP or Java Server Pages is a server side technology. It is used for creating web applications. It is used to create dynamic web content. In this, JSP tags are used to insert JAVA code into HTML pages. Check out more on Java Server Pages- JSP documentation
+
+Requirements
+Create two JSP pages-
+
+Home page
+Customer form
+Attributes present in Home page-
+
+Project name as header (CRM - Customer Relationship Manager)
+Add Customer button (To add the customer information)
+View of already added customers (if any) in a table format
+Update and Delete link/button on the right side of each customer information
+Attributes present in Customer Form page-
+
+Project name as header (CRM - Customer Relationship Manager)
+Input fields for First name, Last name and email address
+Save button to save all information
+Back button to go back to the home page
+Design templates for the two pages-
+
+Home page
+-----------------
