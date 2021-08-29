@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+      <meta charset="UTF-8">
+      <title>CRM - Customer Relationship Manager</title>
+  </head>
+
+  <body>
+    <h2>CRM - Customer Relationship Manager</h2>
+
+    <button><a th:href="@{/showFormToAddNewCustomer}">Add Customer</a></button>
+
+    <table>
+
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+
+        <tr th:each="viewListOfCustomers : ${viewCustomerHomePage}">
+
+            <td th:text="${viewListOfCustomers.firstName}"> </td>
+            <td th:text="${viewListOfCustomers.lastName}"> </td>
+            <td th:text="${viewListOfCustomers.email}"> </td>
+            <td>
+                <!-- when clicking this link
+                    * the id of the record will be attached to the record  = (id=${viewListOfCustomers.id})
+                    * the button will go to the url = /mappingDeleteCustomer which is mapped on the controller-->
+                <button>
+                    <a th:href="@{/mappingDeleteCustomer (id=${viewListOfCustomers.id})}">Delete</a>
+                </button>
+
+                <!-- when clicking this link
+                    * the id of the record will be attached to the record  = (id=${viewListOfCustomers.id})
+                    * the button will go to the url = /update.html
+                    * binds the id to the request = /update.html/{id}  -->
+                <button>
+                    <a th:href="@{/showCustomerToUpdate/{id} (id=${viewListOfCustomers.id})}">Update</a>
+                </button>
+            </td>
+
+        </tr>
+
+    </table>
+
+  </body>
+</html>
