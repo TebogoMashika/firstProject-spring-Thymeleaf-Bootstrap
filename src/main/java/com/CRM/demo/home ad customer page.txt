@@ -42,3 +42,8 @@ Design templates for the two pages-
 
 Home page
 -----------------
+
+Add to project
+    - view page
+    - upload
+    - relationships

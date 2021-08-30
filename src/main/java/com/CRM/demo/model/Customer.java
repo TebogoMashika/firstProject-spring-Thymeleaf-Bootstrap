@@ -1,6 +1,9 @@
 package com.CRM.demo.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+
 
 @Entity
 @Table(name = "Customer")
@@ -22,13 +25,27 @@ public class Customer {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "date_of_birth")
+    @DateTimeFormat
+    private String dateOfBirth;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "tel")
+    private String tel;
+
     public Customer() {
     }
 
-    public Customer(String firstName, String lastName, String email) {
+    public Customer(Long id, String firstName, String lastName, String email, String dateOfBirth, String address, String tel) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.tel = tel;
     }
 
     public Long getId() {
@@ -61,5 +78,29 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 }

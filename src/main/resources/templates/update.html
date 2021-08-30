@@ -10,14 +10,6 @@
 
     <h2>CRM - Customer Relationship Manager</h2>
 
-    <div th:each=" customer : ${customerToUpdate}">
-
-      <label th:text="${customer.firstName}"></label><br>
-      <label th:text="${customer.lastName}"></label><br>
-      <label th:text="${customer.email}"></label><br>
-
-    </div>
-
     <!-- Actions of the forms will be mapped to /update.html and
         Object is the main POJO class-->
     <form th:action="@{/saveCustomer}" th:object="${customer}">
@@ -40,6 +32,20 @@
         <input type="text" class="col" th:field="*{email}">
       </div>
 
+      <div class="form-group">
+        <label>Date Of Birth: </label>
+        <input type="text" class="col" th:field="*{dateOfBirth}">
+      </div>
+
+      <div class="form-group">
+        <label>Address: </label>
+        <input type="text" class="col" th:field="*{address}">
+      </div>
+
+      <div class="form-group">
+        <label>Telephone: </label>
+        <input type="text" class="col" th:field="*{tel}">
+      </div>
       <button type="submit" class="btn btn-primary"> Submit</button>
 
     </form>

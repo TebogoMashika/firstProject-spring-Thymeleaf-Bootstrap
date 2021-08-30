@@ -20,6 +20,9 @@ public class LoadData implements CommandLineRunner {
         newCustomer.setFirstName("Tebogo");
         newCustomer.setLastName("Mashika");
         newCustomer.setEmail("customer@gmail.com");
+        newCustomer.setDateOfBirth("2021/09/14");
+        newCustomer.setAddress("134 Winnie Zone 10");
+        newCustomer.setTel("37647634632");
 
         customerService.save(newCustomer);
 

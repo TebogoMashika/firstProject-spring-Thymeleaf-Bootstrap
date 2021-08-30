@@ -16,8 +16,6 @@ public class CustomerController {
     // perform dependency injection
     private final CustomerService customerService;
 
-
-
     public CustomerController(CustomerService customerService) {
         this.customerService = customerService;
     }
@@ -81,6 +79,37 @@ public class CustomerController {
         return "customer.html";
 
     }
+
+    // view user details
+    @RequestMapping("viewUser/{id}")
+    public String viewUser(@PathVariable(value = "id") Long id, Model model, Customer customer){
+
+        model.addAttribute("viewSelectedUser", customerService.getById(id));
+
+        return "viewCustomer.html";
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
