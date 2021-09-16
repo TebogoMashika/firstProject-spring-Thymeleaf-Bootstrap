@@ -6,8 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @Controller
@@ -32,6 +34,7 @@ public class CustomerController {
 
 
     @RequestMapping({"/mappingDeleteCustomer"}) // mapping this url as a link on Home page
+
     public String deleteCustomer(Model model,
                                  @RequestParam(value = "id", required = false) Long  id){
 
@@ -89,30 +92,6 @@ public class CustomerController {
         return "viewCustomer.html";
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

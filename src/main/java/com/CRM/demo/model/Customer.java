@@ -1,16 +1,16 @@
 package com.CRM.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-
 
 @Entity
 @Table(name = "Customer")
 public class Customer {
 
     // Model Object or Value Object - This object is simple POJO containing get/set methods to store data retrieved using DAO class
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
