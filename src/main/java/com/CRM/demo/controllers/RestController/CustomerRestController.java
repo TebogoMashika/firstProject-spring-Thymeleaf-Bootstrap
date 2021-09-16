@@ -18,6 +18,12 @@ import java.util.Optional;
 public class CustomerRestController {
 
   public static final String BASE_URL = "rest-service/";
+  public static final String VIEW_CUSTOMER_LIST = "/viewListOfCustomers";
+  public static final String DELETE_CUSTOMER = "/deleteCustomer{id}";
+  public static final String VIEW_CUSTOMER = "/viewCustomer{id}";
+  public static final String SAVE_CUSTOMER = "/saveCustomer";
+  public static final String UPDATE_CUSTOMER = "/UpdateCustomer{id}";
+
 
   private final CustomerService customerService;
 
@@ -26,15 +32,14 @@ public class CustomerRestController {
   }
 
   // view all
-  @GetMapping("/viewListOfCustomers")
+  @GetMapping(VIEW_CUSTOMER_LIST)
   public List<Customer> viewCustomers(){
 
     return customerService.findAll();
   }
 
-
   // delete customer
-  @PostMapping("/deleteCustomer{id}")
+  @PostMapping(DELETE_CUSTOMER)
   public String deleteCustomer(@RequestBody Customer  customer){
 
     // get customer by id
@@ -46,14 +51,14 @@ public class CustomerRestController {
   }
 
   // view customer
-  @GetMapping("/viewCustomer{id}")
+  @GetMapping(VIEW_CUSTOMER)
   public Optional<Customer> viewCustomer(@RequestBody Customer customer){
 
     return customerService.findById(customer.getId());
   }
 
   // //save customer to the dataBase
-  @RequestMapping("/saveCustomer")
+  @RequestMapping(SAVE_CUSTOMER)
   public String saveCustomer(@RequestBody Customer customer){
 
     customerService.save(customer);
@@ -63,7 +68,7 @@ public class CustomerRestController {
   }
 
   // save customer
-  @PostMapping({"/UpdateCustomer{id}"})
+  @PostMapping(UPDATE_CUSTOMER)
   public String updateCustomer(@RequestBody Customer customer){
 
     Customer customer1 = customerService.getById(customer.getId());
